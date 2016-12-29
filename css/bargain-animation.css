@@ -1,0 +1,70 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bargain-animation-wrap {
+    width: 50%;
+    height: 25%;
+    position: relative;
+    text-align: center;
+}
+
+.bargain-animation-wrap > img:nth-child(1) {
+    width: 75%;
+    position: absolute;
+    top: -50%;
+    right: -30%;
+
+    animation: bargain-animation 0.5s cubic-bezier(0.29, 0.01, 0, 0.97);
+    -webkit-animation: bargain-animation 0.5s cubic-bezier(0.29, 0.01, 0, 0.97);
+
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+.bargain-animation-wrap > img:nth-child(2) {
+    width: 70%;
+}
+
+.bargain-animation-wrap > img:nth-child(3) {
+    width: 100%;
+    margin-left: 15%;
+    margin-top: -20%;
+}
+
+@keyframes bargain-animation {
+    from {
+        top: -50%;
+        right: -30%;
+        transform: rotate(0deg);
+    }
+
+    to {
+        top: -10%;
+        right: -5%;
+        transform: rotate(-30deg);
+    }
+}
+
+@-webkit-keyframes bargain-animation {
+    from {
+        top: -50%;
+        right: -30%;
+        transform: rotate(0deg);
+    }
+
+    to {
+        top: -10%;
+        right: -5%;
+        transform: rotate(-30deg);
+    }
+}

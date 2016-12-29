@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link type="text/css" href="css/bargain-animation.css" rel="stylesheet">
+
+    <title>手机端营销砍价动画实现</title>
+
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            function startTheAnimation() {
+                $('.modal-backdrop').css('display', '');
+
+                $('.bargain-animation-wrap > img:nth-child(1)').css({
+                    'animation-play-state': 'running',
+                    '-webkit-animation-play-state': 'running'
+                });
+
+                setTimeout(function () {
+                    $('.bargain-animation-wrap > img:nth-child(1)').css('display', 'none');
+                    $('.bargain-animation-wrap > img:nth-child(2)').css('display', 'none');
+                    $('.bargain-animation-wrap > img:nth-child(3)').css('display', '');
+
+                    setTimeout(function () {
+                        $('.modal-backdrop').css('display', 'none');
+                    }, 500);
+                }, 500);
+            }
+
+            startTheAnimation();
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="modal-backdrop" style="display: none">
+    <div class="bargain-animation-wrap">
+        <img src="image/bargain_01.png"/>
+        <img src="image/bargain_02.png"/>
+        <img src="image/bargain_result.png" style="display:none"/>
+    </div>
+</div>
+
+</body>
+</html>
